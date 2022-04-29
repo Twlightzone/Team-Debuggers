@@ -34,11 +34,12 @@ window.preload = function () {
     }
 // -----
 
-var player = createSprite(200,380,50,50);
+var player = createSprite(200,327,50,50);
 var ground = createSprite(200,400,50000,20);
 
 function draw() {
   background(28, 179, 231);
+  text(mouseX + "," + mouseY, mouseX, mouseY)
 
 movenment();
 loadChunks();
@@ -51,21 +52,25 @@ drawSprites();
 function movenment(){
     if (keyDown("RIGHT_ARROW")) {
     player.setVelocity(+3,0);
+    
   } 
     if (keyDown("LEFT_ARROW")) {
     player.setVelocity(-3,0);
+    
   } 
   if (player.isTouching(ground)){
     player.bounceOff(ground);
   }
-  if (keyDown("UP_ARROW" && player.position<=350)) {
-    player.velocityY-=3;
+  if (keyDown("UP_ARROW") && player.postion>300) {
+    player.setVelocity(0,-3) 
   }
+  player.velocityY+=0.5
 }
 
 function loadTrees(){
-  if (keyDown("DOWN_ARROW")){
-        
+  if (keyDown("DOWN_ARROW")){ 
+   createSprite(200,380,20,100); 
+   createSprite(200,400,20,200); 
   }
 }
 
