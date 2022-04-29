@@ -45,6 +45,7 @@ loadChunks();
 loadTrees();
 
 
+
 drawSprites();
 }
 
@@ -58,11 +59,14 @@ function movenment(){
   if (player.isTouching(ground)){
     player.bounceOff(ground);
   }
+  if (player.isTouching(ground)) {
+    player.bounceOff(ground);    
+  }
 }
 
 function loadTrees(){
   if (keyDown("DOWN_ARROW")){
-    
+        
   }
 }
 
