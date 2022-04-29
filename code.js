@@ -45,7 +45,6 @@ loadChunks();
 loadTrees();
 
 
-
 drawSprites();
 }
 
@@ -59,8 +58,8 @@ function movenment(){
   if (player.isTouching(ground)){
     player.bounceOff(ground);
   }
-  if (player.isTouching(ground)) {
-    player.bounceOff(ground);    
+  if (keyDown("UP_ARROW" && player.position<=350)) {
+    player.velocityY-=3;
   }
 }
 
