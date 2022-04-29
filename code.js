@@ -52,16 +52,16 @@ drawSprites();
 function movenment(){
     if (keyDown("RIGHT_ARROW")) {
     player.setVelocity(+3,0);
-    
+
   } 
     if (keyDown("LEFT_ARROW")) {
     player.setVelocity(-3,0);
-    
+
   } 
   if (player.isTouching(ground)){
     player.bounceOff(ground);
   }
-  if (keyDown("UP_ARROW") && player.postion>300) {
+  if (keyDown("UP_ARROW")) {
     player.setVelocity(0,-3) 
   }
   player.velocityY+=0.5
@@ -76,10 +76,9 @@ function loadTrees(){
 
 function loadChunks(){
   if (World.frameRate%60===true){
-    
+
   }
 }
-
 // -----
     try { window.draw = draw; } catch (e) {}
     switch (stage) {
